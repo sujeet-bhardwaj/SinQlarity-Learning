@@ -1,0 +1,2 @@
+# SinQlarity 
+ Complete MERN STACK
