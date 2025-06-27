@@ -22,3 +22,6 @@ for(const num of str1){
 console.log(count)
 let str4=str1.slice(1,4);
 console.log(str4)
+
+console.log("hello"==="HELLO")
+console.log("hello"=="HELLO")

@@ -1,0 +1,73 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Practice</title>
+ </head>
+ <body>
+    <h1 id="title">Original Title</h1>
+    <p>This is a paragraph </p>
+  <div id="output">
+    <button>Click me</button>
+  </div>
+<button>
+  Click me 
+</button>
+
+  <ul>
+    
+
+  </ul>
+<div class="last">
+
+
+</div>
+
+
+<script >
+let title=document.querySelector("#title")
+title.innerText="hello DOM"
+console.log(title.innerText);
+title.innerHTML="<h1>hello DOM</h1>"
+console.log(title.innerHTML);
+
+let para=document.querySelector('p')
+console.log(para);
+para.style.color="blue";
+
+let div=document.querySelector("#output")
+div.innerText="2025-06-26"
+ const h1= document.createElement('h1')
+console.log(h1);
+h1.append("welcome");
+document.body.appendChild(h1)
+
+para.style.fontSize="bold"
+
+
+const button = document.querySelector("button");
+button.style.display="none"
+document.body.style.backgroundColor="green"
+
+let li=document.createElement("li");
+li.innerText="apple"
+document.querySelector("ul").prepend(li);
+
+let li2=document.createElement("li");
+li2.innerText="mango"
+document.querySelector("ul").prepend(li2);
+let p=document.createElement("p");
+p.innerText="para written "
+document.querySelector(".last").prepend(p);
+
+<!-- p.remove() -->
+
+p.setAttribute("src","google.com");
+
+</script>
+ </body>
+ </html>
+
+
+ <!-- there is overwrite problem when two event listener applied a tag then second overwrite the first one -->
