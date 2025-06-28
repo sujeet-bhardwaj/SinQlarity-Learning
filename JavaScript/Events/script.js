@@ -46,11 +46,9 @@ button.addEventListener("click",()=>{
     console.log(values);
     h3.innerText="value is:"+values
 })
-
-
-
-
 // overwrite problem resolved there 
+
+
 
 
 
