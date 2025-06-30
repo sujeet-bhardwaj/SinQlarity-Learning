@@ -1,0 +1,178 @@
+mongodb is nosql database 
+
+this is create a database->
+use colleges
+switched to db colleges
+
+
+this is for check database-> 
+   db
+
+list of dbs->
+show dbs
+
+list of collection->
+show collections
+
+
+this is created a collection and insert multiple document ->
+
+db.students.insertMany([
+  {
+    name: "sanjeet",
+    age: 21,
+    gender: "male",
+    gpa: 3.5,
+    skills: ["MongoDB", "Node.js", "Express"],
+    address: { city: "Delhi", pincode: 110001 }
+  },
+  {
+    name: "ranjeet",
+    age: 23,
+    gender: "Male",
+    gpa: 3.8,
+    skills: ["Java", "Spring", "SQL"],
+    address: { city: "Mumbai", pincode: 400001 }
+  },
+  {
+    name: "ajeet",
+    age: 22,
+    gender: "male",
+    gpa: 2.9,
+    skills: ["Python", "Django", "MongoDB"],
+    address: { city: "Bangalore", pincode: 560001 }
+  },
+  {
+    name: "manjeet",
+    age: 20,
+    gender: "Male",
+    gpa: 3.2,
+    skills: ["HTML", "CSS", "JavaScript"],
+    address: { city: "Chennai", pincode: 600001 }
+  },
+  {
+    name: "sachet",
+    age: 24,
+    gender: "male",
+    gpa: 3.9,
+    skills: ["React", "Node.js", "MongoDB"],
+    address: { city: "Delhi", pincode: 110002 }
+  },
+  {
+    name: "sujeet",
+    age: 19,
+    gender: "Male",
+    gpa: 2.5,
+    skills: ["C", "C++"],
+    address: { city: "Kolkata", pincode: 700001 }
+  },
+  {
+    name: "priya",
+    age: 22,
+    gender: "Female",
+    gpa: 3.7,
+    skills: ["Python", "Flask", "SQL"],
+    address: { city: "Mumbai", pincode: 400002 }
+  },
+  {
+    name: "aman",
+    age: 21,
+    gender: "Male",
+    gpa: 3.0,
+    skills: ["JavaScript", "React", "Node.js"],
+    address: { city: "Pune", pincode: 411001 }
+  }
+])
+
+this is used for insert one data->
+db.students.insertOne({name:"sujeet",age:23,address:{city:"varanasi",pincode:221204}})
+
+
+show the how many document in the students collection->
+db.students.find();
+only one documnet show and with name ajeet-> 
+db.students.findOne({name:"ajeet"});
+
+show the document which name is ajeet->
+db.students.find({name:"ajeet"});
+
+
+show the individual field(column) in the documnet ->
+give the document only with name -->
+db.students.find({},{name:1,id:0})
+
+
+drop database-->
+this delete the database college->
+db.dropdatabase()
+
+delete the collection->
+delete the student collection->
+db.students.drop()
+
+
+update in the document->
+update the age in field->
+db.student.updateOne({name:"sujeet"},{$set:{age:25}})
+
+
+update the age where name is sujeet means all the sujeet age is changes ->
+db.student.updateMany({name:"sujeet"},{$set:{age:25}})
+
+if a case ->
+
+in this case is_eligible field is not in the docuement then this is set the field in documnet-> 
+db.student.updateOne({name:"sujeet"},{$set:{is_eligible:true}})
+
+comparison operator->
+$eq=equal to 
+$ne=not equal to
+$gt=greater than 
+$gte=greater than equal to 
+$lt=less than
+$lte=less than  equal to
+
+give the document which age is greater than 21->
+db.student.find({age:{$gt:21}})
+
+give the document which name is not eqaul to sujeet->
+db.student.find({name:{$ne:"sujeet"}})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
