@@ -18,11 +18,4 @@ catch(error){
   console.log("Error is",error.message);
 };
 
-function notTobe= (newvalue)=>{
-           if(newValue!==value){
-            return true;
-           }
-           {
-        throw new error("equal");
-           };  
-}
+
