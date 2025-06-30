@@ -110,6 +110,18 @@ delete the collection->
 delete the student collection->
 db.students.drop()
 
+delete the documnet in a collection->
+this is delete all the document->
+db.student.deleteMany({})
+
+this is delete which name is sujeet  in the document->
+db.student.deleteOne({name:"sujeet"})
+
+
+this is delete all document  which name is sujeet  in the document->
+db.student.deleteMany({name:"sujeet"})
+
+
 
 update in the document->
 update the age in field->
