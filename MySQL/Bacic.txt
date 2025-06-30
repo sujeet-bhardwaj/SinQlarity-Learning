@@ -1,0 +1,76 @@
+SQL (Structured Query Language) is a standard language used to communicate with relational databases.
+
+DDL->Create,Alter,Drop,Truncate
+DML->Insert,Update,delete
+
+
+Create A DataBase->
+CREATE DATABASE <database name >;
+
+note->sql is caseincentive menans you write "create databse xyz"; it is also good 
+
+after this 
+Use DATABASE->USE <database name>
+
+after this create a table 
+CREATE TABLE students (
+  id INT PRIMARY KEY,
+  name VARCHAR(50),
+  age INT,
+  gender ENUM('Male', 'Female', 'Other'),
+  gpa DECIMAL(3,2),
+  admission_date DATE,
+  is_active BOOLEAN
+);
+in table three things 1.colum name 2.datatype 3.constraint 
+
+for drop databse ->
+DROP DATABASE databasename;
+
+for drop table ->
+DROP TABLE table_name;
+
+The ALTER TABLE statement is used to add, delete, or modify(rename) columns in an existing table.
+
+The ALTER TABLE statement is also used to add and drop various constraints on an existing table.
+
+for ADD Column ->
+ALTER TABLE table_name
+ADD column_name datatype;
+
+for delete column ->
+ALTER TABLE table_name
+DROP COLUMN column_name;
+
+
+for rename  column ->
+ALTER TABLE table_name
+RENAME COLUMN old_name to new_name;
+
+for rename table->
+ALTER TABLE table_name
+RENAME TO new_table_name;
+
+
+for modifyDataType->
+ALTER TABLE table_name
+MODIFY COLUMN column_name datatype;
+
+for truncate->
+TRUNCATE TABLE employees;
+delete all the rows but keep the table structure 
+
+for Insert data->
+INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);
+
+for UPDATE DATA ->
+UPDATE table_name
+SET column1 = value1, column2 = value2
+WHERE condition;
+
+
+foe DELETE — Remove Records->
+DELETE FROM table_name
+WHERE condition;
+

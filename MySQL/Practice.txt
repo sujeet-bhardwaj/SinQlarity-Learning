@@ -1,0 +1,178 @@
+CREATE DATABASE xyz;-> creating a database 
+using a database ->
+use XYZ;
+
+creating a table ->
+CREATE TABLE students (
+  id INT PRIMARY KEY,
+  name VARCHAR(50),
+  age INT,
+  gender ENUM('Male', 'Female', 'Other'),
+  gpa DECIMAL(3,2),
+  admission_date DATE,
+  is_active BOOLEAN
+);
+-->table name is students;
+
+
+for drop database->
+drop xyz;
+
+for drop table->
+drop students;
+
+
+for add a new column->
+ALTER TABLE students
+ADD email VARCHAR(30);
+
+for delete a column->
+ALTER TABLE students
+DROP COLUMN email;
+
+for view the table->
+select * from students 
+gives the all colum from students table 
+
+for view a individual column->
+select id,name from students
+give only two column from students table
+
+DML->
+for insert the data into table->
+
+INSERT INTO students VALUES
+(1, 'Sujeet', 22, 'Male', 8.5, '2023-08-10', TRUE),
+(2, 'Aman', 23, 'Male', 7.4, '2022-06-15', TRUE),
+(3, 'Neha', 21, 'Female', 9.1, '2024-01-12', FALSE),
+(4, 'Priya', 23, 'Female', 8.2, '2023-02-20', TRUE),
+(5, 'Meena', 20, 'Other', 6.5, NULL, FALSE);
+
+or 
+INSERT INTO students (id,name,age,gender,gpa,admission_date,is_active)
+VALUES
+(1, 'Sujeet', 22, 'Male', 8.5, '2023-08-10', TRUE),
+(2, 'Aman', 23, 'Male', 7.4, '2022-06-15', TRUE),
+(3, 'Neha', 21, 'Female', 9.1, '2024-01-12', FALSE),
+(4, 'Priya', 23, 'Female', 8.2, '2023-02-20', TRUE),
+(5, 'Meena', 20, 'Other', 6.5, NULL, FALSE);
+
+give all data->
+select * from students;
+give two column data->
+select name,age from students;
+give one column data where is_active=true->
+select is_active from students
+where is_active=true;
+ 
+where apply on the rows then only those rows where gender is female->
+
+select * from students
+where gender='female';
+
+Update->
+this is update the first row and change the name sujeet to ajeet 
+
+UPDATE students
+SET name="ajeet"
+where id=1;
+update the age of aman->
+UPDATE students
+SET age = 24
+WHERE name = 'Aman';
+
+note ->if you not give the where like this-> 
+UPDATE students
+SET age = 24
+then age column in all row is 24 
+
+DELETE->
+this is delete the third row ->
+DELETE FROM students
+WHERE id=3;
+if you not give where then delete all the rows 
+
+SELECT->
+Used to retrieve data from one or more columns in a table.
+
+select column1,column2 from students;
+SELECT * FROM students;
+select all the columns
+
+WHERE->
+this is use to apply on the rows and filter the record 
+
+select * from students
+where age>21;
+
+
+PRACTICE->
+
+
+gives the students which age is greater than 21->
+select * from students
+where age>21;
+
+gives the students which gpa is between  8 and 9->
+select * from students
+where gpa between 8 and  9;
+
+gives the students which admission_date null hai ->
+select * from students
+WHERE admission_date IS NULL;
+
+gives the students which name neha nhii hai->
+select * from students
+where name!='neha';
+
+gives the students which name is aman or priya or meena->
+select * from students
+where name in ('aman','priya','meena');
+
+gives the students which name is start from 's'->
+select * from students
+where name like 's%';
+
+gives the students which name is end  at 'a'->
+select * from students
+where name like '%a';
+
+gives the students which gender  is male or female->
+SELECT * FROM students
+WHERE gender IN ('male', 'female');
+
+
+
+gives the students which admission_date null nhii hai->
+SELECT * FROM students
+WHERE admission_date is not null;
+
+gives the students which gender female and is_active true hai there are two condition->
+SELECT * FROM students
+WHERE gender='female' and is_active=true;
+
+gives the students which gender male and gpa is greater than  there are two condition->
+SELECT * FROM students
+WHERE gender='male' and gpa>8;
+
+
+
+in this descending order based on the name column in student table->
+SELECT * FROM students
+order by name desc;
+
+in this descending order based on the name column in student table and limit show only 3 rows ->
+SELECT * FROM students
+order by name desc
+limit 3;
+
+
+gives the students which name and between the name is e->
+SELECT * FROM students
+where name like '%e%';
+
+
+gives the students which name second letter  is 'e'->
+SELECT * FROM students
+where name like '_e%';
+

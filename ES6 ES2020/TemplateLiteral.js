@@ -7,3 +7,5 @@ function printname(name,age){
 // /n is easy use in template literal 
 }
 printname(name,age)
+
+
