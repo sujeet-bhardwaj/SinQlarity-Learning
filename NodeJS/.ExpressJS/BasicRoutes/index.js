@@ -2,7 +2,7 @@
 const express=require('express')
 
 const app=express()
-
+app.use(express.json());
 app.use("/",(req,res,next)=>{
      console.log("first middleware")
     //  res.send("end the web page")
@@ -26,7 +26,9 @@ app.get("/submit2",(req,res,next)=>{
 })
 
 app.post("/submit3",(req,res,next)=>{
-    // res.send("first post metod")
+     let data=req.body
+     console.log(data)
+    res.send("first post metod")
 })
 
 
