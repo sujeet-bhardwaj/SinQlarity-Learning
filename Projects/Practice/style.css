@@ -1,0 +1,32 @@
+.block{
+      width: 200px;
+      height: 200px;
+      margin: 5px;
+      text-align: center;
+}
+#block1{
+    background-color: rgb(152, 202, 51);
+    /* position:relative;
+    top:20px;  
+    left:10px;  
+    z-index: -1; */
+}
+#block2{
+    background-color: violet;
+    position: absolute; 
+     top: 10px;
+    left: 60px; 
+}
+#block3{
+    background-color: springgreen;
+
+}
+#block4{
+    background-color: seagreen;
+ 
+}
+#block5{
+    background-color:deeppink;
+       position: sticky;
+        top: 0;
+}
