@@ -1,0 +1,124 @@
+body{
+     margin:0;
+    padding:0;
+    background: linear-gradient(45deg,#08001f,#30197d);
+    height: 100vh;
+    box-sizing: border-box;
+   
+}
+.container{
+    height: 400px;
+    width: 500px;
+    background-color: aqua;
+    padding-left: 20px;
+    padding-top:10px;
+    margin: 0 auto;
+    position:relative;
+    top:80px;
+}
+
+h1{
+    text-align: center;
+}
+.time{
+  height: 60px;
+  margin: 10px;
+}
+.showtime{
+    height:100%;
+}
+.clock{
+   width: 100%;
+   height: 100%;
+   background: rgba(235, 0, 255, 0.11);
+border-radius: 10px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ backdrop-filter: blur(40px);
+}
+.clock span{
+  font-size:40px;
+   width: 110px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+#hrs::after{
+  content: "HOURS";
+ font-size: 12px;
+}
+
+#min::after{
+  content: "MINUTE";
+   font-size: 12px;
+}
+#sec::after{
+  content: "SECOND";
+   font-size: 12px;
+}
+/* upper part is clock set */
+
+/* alarm set  */
+
+.alarmsetsection{
+     width: 100%;
+     margin-top: 20px;
+
+
+}
+.first{
+     display: flex;  
+      justify-content:center;
+      padding-left:40px;
+}
+.first input{
+  width:30%;
+  background-color: ivory;
+}
+
+
+.first button{
+  margin:auto;
+  border-radius: 5px;
+  background-color: tomato;
+}
+.second{
+ font-size:large;      
+color: #08001f;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+display: flex;
+justify-content: center;
+}
+
+
+
+
+
+
+
+/* Stop watch  */
+
+.stopwatch{
+  margin-top: 30px;
+  width: 100%;
+
+
+
+}
+h2{
+  text-align: center;
+   font-size: larger;
+}
+.threebutton{
+  display: flex;
+  justify-content: center;
+}
+.threebutton button{
+  margin: 10px;
+  width: 100%;
+  background-color: coral;
+  border-radius: 5px;
+  outline: none;
+}
+

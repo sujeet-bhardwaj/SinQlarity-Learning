@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+      <header><h1>Visual Clock</h1></header>
+    <main>
+      <section class="time">
+            <div class="showtime"> 
+                <div class="clock">
+                    <span id="hrs">00</span>
+                    <span >:</span>
+                    <span id="min">00</span>
+                    <span>:</span>
+                    <span id="sec">00</span>
+
+                </div>
+            </div>
+      </section>
+       <section class="alarmsetsection">
+         <div class="first"> 
+           <input type="time" id="alarmtime">           
+           <button class="alarm">Set AlarmBtn</button>
+          </div>
+           <div class="second">
+           <p id="status"></p>
+           </div>
+       </section>
+       <section class="stopwatch">
+        <h1>Stopwatch</h1>
+        <h2 id="display">00:00:00</h2> 
+        <div class="threebutton">
+        <button class="start">Start</button>          
+        <button class="stop">Stop</button>
+        <button class="reset">Reset</button>
+        </div>
+       </section>
+    </main>  
+    </div>
+   <script src="script.js"></script>
+</body>
+</html>
