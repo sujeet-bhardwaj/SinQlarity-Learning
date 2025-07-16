@@ -1,4 +1,4 @@
-.block{
+/* .block{
       width: 200px;
       height: 200px;
       margin: 5px;
@@ -6,16 +6,10 @@
 }
 #block1{
     background-color: rgb(152, 202, 51);
-    /* position:relative;
-    top:20px;  
-    left:10px;  
-    z-index: -1; */
+ 
 }
 #block2{
-    background-color: violet;
-    position: absolute; 
-     top: 10px;
-    left: 60px; 
+    background-color: violet
 }
 #block3{
     background-color: springgreen;
@@ -27,6 +21,32 @@
 }
 #block5{
     background-color:deeppink;
-       position: sticky;
-        top: 0;
+}
+.contain{
+
+    /* display: flex; */
+
+
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f0f0f0;
+}
+
+.timer-box {
+    text-align: center;
+}
+
+#timer-display {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+input, button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 5px;
 }

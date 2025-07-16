@@ -1,5 +1,3 @@
-  
-
   const UserDb=(sname:string,sclass:string)=>{
              console.log(sname,sclass);  
           return "data is reach there";
@@ -15,14 +13,9 @@
        accountstatus:lockedState
   }
   
-
-
    const UserUpdateDb=(objeUser:User)=>{
             console.log(objeUser)
           return "data is reach there";
   }
-
-
-
 
 export {UserDb,UserUpdateDb}

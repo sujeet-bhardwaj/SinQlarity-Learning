@@ -9,7 +9,7 @@
 <body>
     <div class="container">
       <header><h1>Visual Clock</h1></header>
-    <main>
+    <main >
       <section class="time">
             <div class="showtime"> 
                 <div class="clock">
@@ -18,20 +18,55 @@
                     <span id="min">00</span>
                     <span>:</span>
                     <span id="sec">00</span>
-
+                  <button class="AM"></button>
                 </div>
             </div>
-      </section>
+            <div class="timebtn">
+            <button class="setHour">12hour</button>
+            </div>
+            </section>
+        </div>
+
+<!-- alarm section -->
+
+        <div class="bottom">
        <section class="alarmsetsection">
+        <h1>Alarm Set</h1>
          <div class="first"> 
-           <input type="time" id="alarmtime">           
-           <button class="alarm">Set AlarmBtn</button>
+          <div class="bottom">
+<div id="hours"> 
+ <input type="number" id="houralarm" class="hourminute" min="1" max="12">
+  <span>Hour</span>
+</div>
+<div id="minutes">
+        <input type="number" id="minutealarm" class="hourminute" min="0" max="59" >
+        <span>Minutes</span>
+</div>
+  <select id="ampm">
+  <option id="am">AM</option>
+  <option id="pm">PM</option>
+</select>   
+</div>
+           <button class="alarm">Set Alarm</button>
           </div>
            <div class="second">
            <p id="status"></p>
            </div>
        </section>
-       <section class="stopwatch">
+       <!-- multiple alarm  -->
+       <section class="multipleAlarm">
+         <ol id="list">
+         
+         </ol>
+
+       </section>
+       </div>
+
+
+
+       <!-- end of alarm section-->
+       <div class="bottom">
+   <section class="stopwatch">
         <h1>Stopwatch</h1>
         <h2 id="display">00:00:00</h2> 
         <div class="threebutton">
@@ -39,9 +74,21 @@
         <button class="stop">Stop</button>
         <button class="reset">Reset</button>
         </div>
+ </section>
+        <section class="timer">
+        <h1>Timer</h1>
+        <h2 id="tdisplay"><span id="tmin">00</span>
+                    <span>:</span>
+                    <span id="tsec">00</span></h2>
+        <input type="number" id="minutes-input" placeholder="Enter minutes" min="1"> 
+        <div class="threebutton">
+        <button class="tstart">Start</button>          
+        <button class="tstop">Stop</button>
+        <button class="treset">Reset</button>
+        </div>
        </section>
+       </div>
     </main>  
-    </div>
    <script src="script.js"></script>
 </body>
 </html>

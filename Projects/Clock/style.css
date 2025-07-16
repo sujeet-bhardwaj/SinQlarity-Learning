@@ -1,124 +1,211 @@
+/* visual clock  */
+
 body{
      margin:0;
     padding:0;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
     background: linear-gradient(45deg,#08001f,#30197d);
     height: 100vh;
+     font-family: Arial, sans-serif;
     box-sizing: border-box;
    
 }
-.container{
-    height: 400px;
-    width: 500px;
-    background-color: aqua;
-    padding-left: 20px;
-    padding-top:10px;
-    margin: 0 auto;
-    position:relative;
-    top:80px;
-}
-
-h1{
-    text-align: center;
-}
-.time{
-  height: 60px;
-  margin: 10px;
-}
-.showtime{
-    height:100%;
+.container,.alarmsetsection,.stopwatch,.timer,.multipleAlarm{
+    background-color:white;
+    margin: 10px;
+    padding: 10px;
+      box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      text-align: center;
 }
 .clock{
    width: 100%;
-   height: 100%;
-   background: rgba(235, 0, 255, 0.11);
-border-radius: 10px;
+   height:100%;
+   background: #f0f0f0;
+     /* margin-bottom:10px; */
+border-radius: 5px;
  display: flex;
  align-items: center;
  justify-content: center;
- backdrop-filter: blur(40px);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
 }
+.showtime{
+  margin: 5px;
+}
+
 .clock span{
   font-size:40px;
    width: 110px;
-  display: inline-block;
-  text-align: center;
-  position: relative;
 }
-#hrs::after{
+
+ #hrs::after{
   content: "HOURS";
- font-size: 12px;
-}
+ font-size: 10px;
+} 
 
 #min::after{
   content: "MINUTE";
-   font-size: 12px;
+   font-size: 10px;
 }
 #sec::after{
   content: "SECOND";
-   font-size: 12px;
+   font-size: 10px;
 }
-/* upper part is clock set */
+.timebtn{
+   display: flex;
+   justify-content: center;
+}
+.setHour{
+  margin-top: 5px;
+  margin-left: 5px;
+  padding: 10px 20px;        
+  background-color: #4CAF50;  
+  color: white;               
+  border: none;               
+  border-radius: 8px;         
+  font-size: 16px;            
+  cursor: pointer;            
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: all 0.3s ease; 
+}
+
+.AM{
+  margin-top: 5px;
+  margin-left: 5px;
+  padding: 10px 20px;        
+  background-color: grey;  
+  color: white;               
+  border: none;               
+  border-radius: 8px;         
+  font-size: 16px;            
+  cursor: pointer;            
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: all 0.3s ease; 
+}
+.setHour:hover,.AM:hover{
+  background-color: #45a049; 
+  transform: scale(1.05);     
+}
+.AM{
+  display: none;
+}
 
 /* alarm set  */
 
-.alarmsetsection{
-     width: 100%;
-     margin-top: 20px;
-
-
+  .first{
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  
+  input[type="time"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease; 
+  }
+input[type="time"]:hover{
+   background-color: #45a049;
+     transform: scale(1.05);  
 }
-.first{
-     display: flex;  
-      justify-content:center;
-      padding-left:40px;
-}
-.first input{
-  width:30%;
-  background-color: ivory;
+
+.alarm,.clearAlarmbtn,.myButton{
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    transition: all 0.3s ease;
 }
 
+.alarm:hover,.clearAlarmbtn:hover,.myButton:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+ #status {
+    font-size: 18px;
+    color: #333;
+  }
 
-.first button{
-  margin:auto;
+/* multiple alarm */
+.multipleAlarm{
+  display: none;  
+}
+#houralarm,#minutealarm{
   border-radius: 5px;
-  background-color: tomato;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #f0f0f0;
 }
-.second{
- font-size:large;      
-color: #08001f;
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-display: flex;
-justify-content: center;
+#ampm{
+  padding:2px;
+}
+#hours,#minutes{
+  padding: 5px;
 }
 
 
 
-
-
-
-
-/* Stop watch  */
-
-.stopwatch{
-  margin-top: 30px;
-  width: 100%;
-
-
-
-}
-h2{
-  text-align: center;
-   font-size: larger;
-}
-.threebutton{
+/* #list{
   display: flex;
-  justify-content: center;
+  flex-direction:column;
+  justify-content:center;
+} */
+
+
+
+
+
+
+
+/* stopwatch */
+ .threebutton {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+.threebutton button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    transition: all 0.3s ease;
+    margin-right:5px;
+  }
+
+  .threebutton button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+h2{
+     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+     border-radius: 5px;
 }
-.threebutton button{
-  margin: 10px;
-  width: 100%;
-  background-color: coral;
+
+
+
+/* timer  */
+.bottom{
+  display: flex;
+}
+#minutes-input{
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #f0f0f0;
   border-radius: 5px;
-  outline: none;
 }
 

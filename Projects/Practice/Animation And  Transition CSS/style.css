@@ -1,0 +1,19 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  width: 300px;
+  height: 200px;
+  background-color: steelblue;
+  /* box-shadow: 5px 5px 10px 0px green; */
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+.inside{
+ width: 100px;
+ height: 100px;
+background-color: thistle;
+
+}
+
