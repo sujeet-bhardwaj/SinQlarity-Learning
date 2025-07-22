@@ -1,0 +1,11 @@
+"use strict";
+var username = "sujeet";
+console.log(username);
+var data = true;
+console.log(data);
+var item = "50";
+var item2 = Number(item);
+console.log(item2);
+var data2 = "30";
+data2 = false;
+console.log(typeof data2);

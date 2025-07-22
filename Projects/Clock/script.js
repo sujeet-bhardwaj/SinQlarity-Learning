@@ -107,6 +107,7 @@ delBtn.setAttribute("class", "myButton");
         //      multipleAlarm.style.display="none"
         // }
           li.remove();
+          clearInterval(id);
            if (document.querySelectorAll("li").length === 0) {
         multipleAlarm.style.display = "none";
     }       
@@ -187,36 +188,36 @@ const display=document.querySelector("#display");
 const start=document.querySelector('.start')
 const stop=document.querySelector('.stop')
 const reset=document.querySelector('.reset')
-
+  let millisecond=0;
  let seconds = 0;
   let minutes = 0;
   let hours = 0;
 let time;
  function  updatedisplay(){
- let hrs=hours<10?"0"+hours:hours
+ let milli=millisecond<10?"0"+millisecond:millisecond
   let mints=minutes<10?"0"+minutes:minutes
   let sec=seconds<10?"0"+seconds:seconds
-  display.innerText=`${hrs}:${mints}:${sec}`
+  display.innerText=`${mints}:${sec}:${milli}`
  }
 start.addEventListener("click",()=>{
      if(!time){
- time=setInterval(()=>{
-     seconds++;
-     // console.log(seconds)
-    if(seconds === 60){
-     seconds=0;
-     minutes++;
-     console.log("minutes",minutes);
+ time= setInterval(()=>{
+       millisecond+=10;
+    if(millisecond==1000){
+        seconds++;
+        millisecond=0;
+         console.log("first second")
     }
-    if(minutes === 60){
-     minutes=0;
-     hours++;
+    if(seconds==60){
+         minutes=1;
+         seconds=0;
+         console.log("first minute")
     }
-    updatedisplay()
-  },1000)
-
+   updatedisplay();
+   },10)
      }
 })
+
 
 stop.addEventListener("click",()=>{   
 clearInterval(time);
@@ -226,7 +227,7 @@ reset.addEventListener("click",()=>{
     clearInterval(time);
     seconds=0;
     minutes=0;
-    hours=0;
+    millisecond=0;
 updatedisplay();
 })
 
