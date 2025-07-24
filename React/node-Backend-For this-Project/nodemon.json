@@ -1,0 +1,6 @@
+{
+  "env":{
+    "connectingString":"mongodb://localhost:27017/VisualReact"
+  }
+
+}

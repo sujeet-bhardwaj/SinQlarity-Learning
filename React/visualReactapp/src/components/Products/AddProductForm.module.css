@@ -1,0 +1,19 @@
+.form{
+display: flex;
+flex-wrap: wrap;
+padding: 10px;
+background-color: aqua;
+}
+.container{
+ margin: 0 auto;
+  width: 300px;
+  background-color: aqua;  
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.btn{
+margin-top: 5px;
+}
