@@ -1,8 +1,9 @@
 import React from 'react';
 import AddProductForm from '../components/Products/AddProductForm';
-
+import { useNavigate } from 'react-router';
 
 const AddProduct = () => {
+  const navigate=useNavigate();
   function addProductHandler(newProduct) {
     console.log("Product received in parent:", newProduct);
    fetch("http://localhost:3004/product", {

@@ -21,8 +21,6 @@ const Productitem = (props) => {
        <button className={styles.btn}>Purchase</button>  
           </Wrapper> 
     </li>
-
-
   )
 }
 

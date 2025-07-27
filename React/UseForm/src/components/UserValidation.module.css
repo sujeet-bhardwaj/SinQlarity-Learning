@@ -1,0 +1,18 @@
+.userDetailForm{
+   margin-bottom: 20px;
+   border-bottom: solid 1px gray;
+   padding-bottom: 10px;
+
+}
+.Userform{
+     margin: 0 auto;
+     width:400px;
+     border: solid 2px gray;
+     padding: 20px;
+     font-size: 20px;
+}
+.formgroup{
+  display:block;
+
+   min-width: 100px;
+}

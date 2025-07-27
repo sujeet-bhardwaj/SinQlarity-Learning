@@ -27,7 +27,17 @@ app.post('/product', async (req, res) => {
     res.status(500).send({ status: 'error', message: error.message });
   }
 });
-
+app.get("/product",async(req,res)=>{
+try{
+  console.log("fetching")
+const products=await Product.find();
+res.send({status:"success",data:products})
+}
+catch(error){
+console.log(error.message)
+res.send({status:'error',message:error.message})
+}
+})
 // Connect to MongoDB
 mongoose.connect(process.env.connectingString)
 .then(() => {

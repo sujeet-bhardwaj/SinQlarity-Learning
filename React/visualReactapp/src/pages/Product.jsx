@@ -1,35 +1,38 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Productlist from "../components/Products/Productlist";
+
 const Product = () => {
-  let products = [
-    {
-        id:"p1",
-        product_name:"City Tour",
-        image:"https://images.pexels.com/photos/2098427/pexels-photo-2098427.jpeg",
-        describe:"it is good tour",
-        price:"2000"
-    },
- {
-        id:"p2",
-        product_name:"Forest Tour",
-        image:"https://images.pexels.com/photos/1367105/pexels-photo-1367105.jpeg",
-        describe:"it is better  tour",
-        price:"20000"
-    },
-     {
-        id:"p3",
-        product_name:"Beach Tour",
-        image:"https://images.pexels.com/photos/1078983/pexels-photo-1078983.jpeg",
-        describe:"it is refresher tour",
-        price:"30000"
+   const [products,setProduct]=useState([]);
+  const [isDataflag,setDataflag]=useState(true)
+useEffect(() => {
+  fetch("http://localhost:3004/product", {
+    method: "GET",
+    headers: {
+      'Content-type': "application/json"
     }
-  ];
+  })
+    .then(res => res.json())
+    .then(data => {
+      setDataflag(false);
+      setProduct(data.data);
+    })
+    .catch(err => {
+      console.error("Error fetching product:", err);
+    });
+}, []); // empty array = run once
+
+if(isDataflag){
+ return(
+    <div>data is loading </div>
+ )
+}
   return (
     <div>
- 
+   
      <Productlist products={products}/>
 
     </div>
   );
 };
 export default Product;
+//re render only when state is change if state is not change then not rerendrin possible 
