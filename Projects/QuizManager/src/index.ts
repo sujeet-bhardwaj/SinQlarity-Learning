@@ -9,7 +9,7 @@ import examRoute from './routes/exam'
 import quizRoute from './routes/quiz'
 const mongodb_url=process.env.LOCAL_STRING || "";
 import ProjectError from "./helper/error"
-
+import reportRoute from './routes/report'
 declare global{
      namespace Express{
        interface Request{
@@ -31,6 +31,8 @@ app.use("/auth",authrouter)
 app.use("/exam",examRoute)
 //redirect quiz route
 app.use("/quiz",quizRoute)
+// redirect report route
+app.use("/report",reportRoute)
 
 app.use((err: ProjectError, req: Request, res: Response, next: NextFunction) => {
   // Default values
@@ -56,7 +58,7 @@ app.use((err: ProjectError, req: Request, res: Response, next: NextFunction) => 
 
 mongoose.connect(mongodb_url).then((
 )=>{
-app.listen(process.env.PORT,(error:any)=>{
+app.listen(process.env.PORT||8080,(error:any)=>{
     if(error){
         console.log("error occured",error)
     }

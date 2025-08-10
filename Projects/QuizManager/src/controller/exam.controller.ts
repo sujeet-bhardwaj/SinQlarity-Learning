@@ -6,13 +6,9 @@ import Quiz from '../models/quiz.model'
 import Error  from "../helper/error"
 import Result from "../models/result.model"
 
+import { ReturnResponse } from "../utils/defination"
 
 
-interface ReturnResponse{
-   status:"success"|"error",
-   message:String,
-   data:{}|[]
-}
 
    const startExam=async (req:Request,res:Response,next:NextFunction)=>{
  try {   
@@ -31,17 +27,16 @@ const quizId=req.params.quizId
    const resp:ReturnResponse={status:"success",message:"quiz ",data:{quiz}}
     res.status(200).send(resp)
 
-
-
- } catch (error) {
-    
+ } catch (error) {    
   next(error)
-
  }
-
    } 
+
+
+// submit exam start here 
   const submitExam=async (req:Request,res:Response,next:NextFunction)=>{
   try {
+
      const quizId=req.body.quizId
     const attemped_question= req.body.attemped_question;
        console.log(attemped_question)
@@ -51,7 +46,7 @@ const quizId=req.params.quizId
     const err=new Error("quiz not found ")
     throw err
   }
-  const userId=req.userId;
+
 
   const answer = quiz.answer;
   const allquestions = Object.keys(answer);
@@ -59,30 +54,31 @@ const quizId=req.params.quizId
   let score = 0;
   for(let i = 0; i < total; i++){
     let question_number = allquestions[i];
-    if(  !attemped_question &&answer[question_number] === attemped_question[question_number]) {
+    if(!!attemped_question &&answer[question_number] === attemped_question[question_number]) {
       score++;
     }
   }
+    const userId=req.userId;
    const result=new Result({userId,quizId,score,total})
-   const data=await result.save();
+    const data=await result.save();
     
-   const resp:ReturnResponse={status:"success",message:"quiz submitted",data:{total,score,resultId:data._id}}
+   const resp:ReturnResponse={status:"success",message:"quiz submitted",data:{total,score,result:data._id}}
     res.status(201).send(resp)
 
 
 
 
  
-
+  
 
 
   } catch (error) {
-    
+     next(error)
   }
 
+  
+
   }
-
-
 
 
 

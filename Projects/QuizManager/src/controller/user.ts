@@ -2,11 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import User from "../models/user.model";
 import Error  from "../helper/error"
 
-interface ReturnResponse {
-  status: "success" | "error";
-  message: String;
-  data: {};
-}
+import { ReturnResponse } from "../utils/defination"
 
 // get userdata
 const Getuser = async (req: Request, res: Response,next:NextFunction) => {

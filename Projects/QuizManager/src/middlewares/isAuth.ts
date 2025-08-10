@@ -13,7 +13,7 @@ try {
   const token=authheader.split(" ")[1];
   console.log(token)
 try {
-
+  //verify   from backend and  frontend 
   const decodetoken = <any>jwt.verify(token, process.env.JWT_TOKEN || "");
   console.log(decodetoken);
   if (!decodetoken) {
@@ -27,7 +27,6 @@ try {
 } catch (error) {
 next(error)
 }
-
 
 } catch (error) {
   next(error)

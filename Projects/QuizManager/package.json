@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "node ./dist/index.js",
+      "start": "node src/index.js",
     "start:ts": "ts-node ./src/index.ts",
     "start:dev": "nodemon ./src/index.ts"
   },

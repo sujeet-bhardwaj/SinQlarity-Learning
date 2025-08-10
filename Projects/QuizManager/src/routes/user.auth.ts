@@ -25,7 +25,9 @@ body("email").trim().isEmail().custom((email) => {
 }).normalizeEmail(),
 body('password').trim().isLength({min:5}).withMessage("Enter at least 5 character long password"),
 body("confirm Password").trim().custom((value, { req }) => {
-    if (value != req.body.password) {
+    console.log(typeof value)
+
+    if ( value !="" && value != req.body.password) {
         return Promise.reject("Password Mismatch");
     }
     return true;
